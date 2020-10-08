@@ -32,6 +32,14 @@
                 { type: "file", name: "contact-me.html" },
             ],
         },
+        {
+            type: "folder",
+            name: "src",
+            files: [
+                { type: "file", name: "App.svelte" },
+                { type: "file", name: "Me.svelte" },
+            ],
+        },
         { type: "file", name: "TODO.md" },
         { type: "file", name: "about.js" },
         { type: "file", name: "package.json" },

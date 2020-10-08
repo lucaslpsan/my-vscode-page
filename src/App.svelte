@@ -6,6 +6,8 @@
 	import Logo from "./components/Logo.svelte";
 	import TreeExplorer from "./components/TreeExplorer.svelte";
 	import Footer from "./components/Footer.svelte";
+	import Tabs from "./components/Tabs.svelte";
+	import Content from "./components/Content.svelte";
 </script>
 
 <style>
@@ -32,14 +34,16 @@
 
 <main>
 	<Menu />
-	<h1>Hello {name}!</h1>
+	<!-- <h1>Hello {name}!</h1>
 	<p>
 		Visit the
 		<a href="https://svelte.dev/tutorial">Svelte tutorial</a>
 		to learn how to build Svelte apps.
-	</p>
+	</p> -->
 	<Sidebar />
 	<TreeExplorer />
+	<Tabs />
+	<Content />
 	<Logo {version} />
 	<Footer />
 </main>

@@ -1,5 +1,6 @@
 <script>
     export let name;
+    export let tab = false;
     $: type = name.slice(name.lastIndexOf(".") + 1);
 </script>
 
@@ -12,7 +13,11 @@
     }
     span:hover {
         color: var(--color-letter-hover);
+        cursor: pointer;
+    }
+    .tab:hover {
+        color: unset;
     }
 </style>
 
-<span style="background-image: url(./static/{type}.svg)">{name}</span>
+<span style="background-image: url(./static/{type}.svg)" class:tab>{name}</span>

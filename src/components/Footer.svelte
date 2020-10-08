@@ -36,7 +36,7 @@
         width: 25vw;
         height: 100%;
     }
-    @media only screen and (max-width: 1500px) {
+    @media only screen and (max-width: 1600px) {
         .second-part {
             overflow: hidden;
             width: 32vw;
