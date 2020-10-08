@@ -3,6 +3,7 @@ html, body {
 	width: 100%;
 	height: 100%;
 	background-color: #20232b;
+	--color-background-parts: #23262e;
 	--color-diselect: #5c5966;
 	--color-letter-hover: #cbcbcb;
 	--color-special-theme: #01e8c6;

@@ -49,13 +49,15 @@
         width: 16em;
         position: absolute;
         left: 4em;
-        top: 2.5em;
+        top: 2.3em;
         border-right: 1px solid #1a1c22;
+        background-color: var(--color-background-parts);
         height: 94vh;
         display: flex;
         flex-direction: column;
         text-align: start;
         color: var(--color-diselect);
+        padding: 0.1em 0 0 0.3em;
     }
     .wrap svg {
         width: 18px;

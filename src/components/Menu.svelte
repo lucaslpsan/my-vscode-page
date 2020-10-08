@@ -7,9 +7,13 @@
         left: 0;
         width: 100vw;
         /* left: 3.5em; */
-        background-color: #23262e;
+        background-color: var(--color-background-parts);
         color: #cbcbcb;
         cursor: default;
+    }
+    .options-menu {
+        display: flex;
+        flex-direction: row;
     }
     .buttom {
         padding: 8px;
@@ -21,10 +25,39 @@
         width: 20px;
         margin: auto 15px auto 10px;
     }
+    .overflow {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
     .title {
         padding: 8px;
         position: absolute;
         left: 40vw;
+    }
+    @media only screen and (max-width: 1200px) {
+        .title {
+            right: 10em;
+        }
+    }
+    @media only screen and (max-width: 1050px) {
+        .title {
+            left: initial;
+            right: 10em;
+            width: 34vw;
+        }
+        .options-menu {
+            width: 42vw;
+        }
+    }
+    @media only screen and (max-width: 900px) {
+        /* .title {
+            right: 10em;
+            width: 35vw;
+        } */
+        .options-menu {
+            width: 35vw;
+        }
     }
     .group-buttom-os {
         display: flex;
@@ -64,16 +97,19 @@
             d="m697.1 976.2c17 17.4 37.6 11.7 37.6 11.7l228.1-112.4c29.2-19.9 25.1-44.6 25.1-44.6v-671.2c0-29.5-30.2-39.7-30.2-39.7l-197.7-95.3c-43.2-26.7-71.5 4.8-71.5 4.8s36.4-26.2 54.2 23.4v887.5c0 6.1-1.3 12.1-3.9 17.5-5.2 10.5-16.5 20.3-43.6 16.2z"
             fill="#3c99d4" />
     </svg>
-
-    <div class="buttom">File</div>
-    <div class="buttom">Edit</div>
-    <div class="buttom">Selection</div>
-    <div class="buttom">View</div>
-    <div class="buttom">Go</div>
-    <div class="buttom">Run</div>
-    <div class="buttom">Terminal</div>
-    <div class="buttom">Help</div>
-    <div class="title">index.html - lucaslpsan.dev - Visual Studio Code</div>
+    <div class="options-menu overflow">
+        <div class="buttom">File</div>
+        <div class="buttom">Edit</div>
+        <div class="buttom">Selection</div>
+        <div class="buttom">View</div>
+        <div class="buttom">Go</div>
+        <div class="buttom">Run</div>
+        <div class="buttom">Terminal</div>
+        <div class="buttom">Help</div>
+    </div>
+    <div class="title overflow">
+        index.html - lucaslpsan.dev - Visual Studio Code
+    </div>
     <div class="group-buttom-os">
         <div class="buttom-os">
             <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path

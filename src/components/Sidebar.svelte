@@ -2,7 +2,7 @@
     .wrap {
         height: 95vh;
         position: absolute;
-        top: 2.2em;
+        top: 2.3em;
         left: 1em;
         border-right: 1px solid #1a1c22;
         padding-right: 1em;
