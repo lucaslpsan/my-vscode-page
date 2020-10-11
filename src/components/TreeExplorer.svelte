@@ -28,6 +28,7 @@
                     ],
                 },
                 { type: "file", name: "index.html" },
+                { type: "file", name: "me.html" },
                 { type: "file", name: "projects.html" },
                 { type: "file", name: "contact-me.html" },
             ],

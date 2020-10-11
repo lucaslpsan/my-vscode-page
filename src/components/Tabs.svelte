@@ -28,7 +28,7 @@
 
 <div class="wrap">
     <div class="tab">
-        <File name="Me.svelte" tab={true} />
+        <File name="me.html" tab={true} />
     </div>
     <div class="tab">
         <File name="App.svelte" tab={true} />

@@ -7,8 +7,17 @@
     <title>Me.html</title>
 </head>
 <style>
+    @font-face {
+        font-family: "JetBrains Mono";
+        src: url("../static/font/JetBrainsMono-Regular.woff2") format("woff2");
+    }
+
     body {
         text-align: center;
+        font-family: 'JetBrains Mono';
+        color: #D5CED9;
+        letter-spacing: 1px;
+        text-align: start;
     }
 
     h1 {
@@ -16,12 +25,82 @@
         text-transform: uppercase;
         font-size: 4em;
         font-weight: 100;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    }
+
+    .lines {
+        position: absolute;
+        text-align: end;
+        width: 1.5em;
+        color: #5f6167;
+        user-select: none
+    }
+
+    .content {
+        margin-left: 2.5em;
+    }
+
+    reserved {
+        color: #f92672;
+    }
+
+    special {
+        color: #FFE66D;
+    }
+
+    string {
+        color: #96E072
+    }
+
+    constant {
+        color: #ee5d43
     }
 </style>
 
 <body>
-    <h1>Hello World</h1>
+    <div class="lines">
+    </div>
+    <div class="content">
+        <!-- <h1>Hello World</h1> -->
+        &lt;!<reserved>DOCTYPE</reserved>
+        <special>html</special>&gt;
+        <br>
+        &lt;<reserved>html</reserved>
+        <special>lang</special>=<string>"pt"</string>&gt;
+        <br>
+        <br>
+        &lt;<reserved>head</reserved>&gt;
+        <br>
+        &emsp;&lt;<reserved>meta</reserved>
+        <special>charset</special>=<string>"UTF-8"</string>&gt;
+        <br>
+        &emsp;&lt;<reserved>meta</reserved>
+        <special>name</special>=<string>"viewport"</string>
+        <special>content</special>=<string>"width=device-width,
+            initial-scale=1.0"</string>&gt;
+        <br>
+        &emsp;&lt;<reserved>title</reserved>&gt;Me.html&lt;/<reserved>title</reserved>&gt;
+        <br>
+        &emsp;&lt;<reserved>link</reserved>
+        <special>rel</special>=<string>'stylesheet'</string>
+        <special>href</special>=<string>'style.css'</string>&gt;
+        <br>
+        &lt;/<reserved>head</reserved>&gt;
+        <br>
+        <br>
+        &lt;<reserved>body</reserved>&gt;
+        <br>
+        &emsp; &lt;<reserved>h1</reserved>&gt;Hello World&lt;/<reserved>h1</reserved>&gt;
+        <br>
+        &lt;/<reserved>body</reserved>&gt;
+    </div>
+    <script>
+        let numLines = '';
+
+        for (i = 1; i < 43; i++) {
+            numLines += i + ' ';
+        }
+        document.querySelector('.lines').innerHTML = numLines;
+    </script>
 </body>
 
 </html>
