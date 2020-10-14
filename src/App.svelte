@@ -1,5 +1,4 @@
 <script>
-	export let name;
 	export let version;
 	import Sidebar from "./components/Sidebar.svelte";
 	import Menu from "./components/Menu.svelte";
@@ -8,6 +7,11 @@
 	import Footer from "./components/Footer.svelte";
 	import Tabs from "./components/Tabs.svelte";
 	import Content from "./components/Content.svelte";
+
+	let currentTab = 0;
+	let contents = ["me", "app", "about"];
+
+	let currentTabHandler = (numTab) => (currentTab = numTab);
 </script>
 
 <style>
@@ -42,8 +46,8 @@
 	</p> -->
 	<Sidebar />
 	<TreeExplorer />
-	<Tabs />
-	<Content />
+	<Tabs {currentTab} {currentTabHandler} />
+	<Content currentContent={contents[currentTab]} />
 	<Logo {version} />
 	<Footer />
 </main>

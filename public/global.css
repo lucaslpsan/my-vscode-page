@@ -11,6 +11,11 @@ html, body {
 	user-select: none
 }
 
+@font-face {
+	font-family: "JetBrains Mono";
+	src: url("static/font/JetBrainsMono-Regular.woff2") format("woff2");
+}
+
 body {
 	color: white;
 	margin: 0;

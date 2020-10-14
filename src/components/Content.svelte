@@ -1,18 +1,50 @@
+<script>
+    import { onMount } from "svelte";
+
+    export let currentContent;
+
+    let numLines = "";
+
+    onMount(() => {
+        for (let i = 1; i < 43; i++) {
+            numLines += i + " ";
+        }
+
+        document.querySelector(".num-lines").innerHTML = numLines;
+    });
+</script>
+
 <style>
+    .wrap {
+        background-color: #262a33;
+    }
     iframe {
         position: absolute;
-        left: 20.4em;
-        width: 77vw;
+        left: 23em;
+        width: 72vw;
         height: 90vh;
         top: 5em;
         border: none;
-        background-color: #262a33;
     }
     /* @media only screen and (max-width: 1430px) {
         iframe {
             width: 77vw;
         }
     } */
+    .num-lines {
+        font-family: "JetBrains Mono";
+        position: absolute;
+        text-align: end;
+        width: 1em;
+        left: 21.3em;
+        top: 5.5em;
+        color: #5f6167;
+        user-select: none;
+    }
 </style>
 
-<iframe src="./static/me.html" title="page" />
+<div class="wrap">
+    <div class="num-lines" />
+
+    <iframe src="./static/{currentContent}.html" title="page" />
+</div>
