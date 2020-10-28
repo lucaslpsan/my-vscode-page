@@ -1,3 +1,20 @@
+<script>
+    import { menuShown, menuShownLocal } from "../helpers/store";
+    let showMenuX = 0;
+    let showMenuY = 0;
+    let menuClickHeight = 0;
+
+    const clickMenuHandler = (e) => {
+        showMenuY = e.target.getBoundingClientRect().y;
+        showMenuX = e.target.getBoundingClientRect().x;
+        menuClickHeight = e.target.getBoundingClientRect().height;
+        console.log(showMenuX, showMenuY);
+        menuShown.show();
+        console.log($menuShown);
+        menuShownLocal.local("menuBar");
+    };
+</script>
+
 <style>
     .wrap {
         display: flex;
@@ -78,6 +95,14 @@
         background-color: #d41325;
         fill: white;
     }
+    .teste {
+        display: none;
+        background-color: white;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        z-index: 1;
+    }
 </style>
 
 <div class="wrap">
@@ -97,7 +122,12 @@
             d="m697.1 976.2c17 17.4 37.6 11.7 37.6 11.7l228.1-112.4c29.2-19.9 25.1-44.6 25.1-44.6v-671.2c0-29.5-30.2-39.7-30.2-39.7l-197.7-95.3c-43.2-26.7-71.5 4.8-71.5 4.8s36.4-26.2 54.2 23.4v887.5c0 6.1-1.3 12.1-3.9 17.5-5.2 10.5-16.5 20.3-43.6 16.2z"
             fill="#3c99d4" />
     </svg>
-    <div class="options-menu overflow">
+    <div
+        id="menuBar"
+        class="options-menu overflow"
+        on:click={(e) => {
+            clickMenuHandler(e);
+        }}>
         <div class="buttom">File</div>
         <div class="buttom">Edit</div>
         <div class="buttom">Selection</div>
@@ -126,4 +156,7 @@
                     d="M7.116 8l-4.558 4.558.884.884L8 8.884l4.558 4.558.884-.884L8.884 8l4.558-4.558-.884-.884L8 7.116 3.442 2.558l-.884.884L7.116 8z" /></svg>
         </div>
     </div>
+    <div
+        class="teste"
+        style={`left: ${showMenuX}px; top: ${showMenuY + menuClickHeight}px; display: ${$menuShown === 0 ? 'none' : 'block'}`} />
 </div>

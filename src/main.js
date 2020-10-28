@@ -5,7 +5,7 @@ const app = new App({
 	intro: true,
 	props: {
 		name: 'world',
-		version: '0.7 - 13/10/2020'
+		version: '0.8 - 28/10/2020'
 	}
 });
 

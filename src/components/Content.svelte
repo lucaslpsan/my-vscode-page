@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte";
+    import { menuShown } from "../helpers/store";
 
     export let currentContent;
 
@@ -43,7 +44,12 @@
     }
 </style>
 
-<div class="wrap">
+<div
+    class="wrap"
+    on:click={() => {
+        menuShown.close();
+        console.log('teste');
+    }}>
     <div class="num-lines" />
 
     <iframe src="./static/{currentContent}.html" title="page" />

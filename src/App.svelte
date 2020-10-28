@@ -7,6 +7,7 @@
 	import Footer from "./components/Footer.svelte";
 	import Tabs from "./components/Tabs.svelte";
 	import Content from "./components/Content.svelte";
+	import { menuShown, menuShownLocal } from "./helpers/store";
 
 	let currentTab = 0;
 	let contents = ["me", "app", "about"];
@@ -36,7 +37,11 @@
 	}
 </style>
 
-<main>
+<main
+	on:click={(e) => {
+		menuShownLocal.local(e.target.parentNode.id);
+		if ($menuShownLocal !== 'menuBar') menuShown.close();
+	}}>
 	<Menu />
 	<!-- <h1>Hello {name}!</h1>
 	<p>
