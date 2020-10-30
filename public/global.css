@@ -8,6 +8,8 @@ html, body {
 	--color-letter-hover: #cbcbcb;
 	--color-special-theme: #01e8c6;
 	--color-special-theme-hover: #109e8b;
+	--color-context-menu: #2b303b;
+	--color-context-menu-hr: #52565e;
 	user-select: none
 }
 

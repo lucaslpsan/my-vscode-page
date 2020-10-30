@@ -1,18 +1,57 @@
 <script>
     import { menuShown, menuShownLocal } from "../helpers/store";
+    import ContextMenu from "./ContextMenu.svelte";
+
     let showMenuX = 0;
     let showMenuY = 0;
     let menuClickHeight = 0;
+    let menuCliked = "";
 
     const clickMenuHandler = (e) => {
         showMenuY = e.target.getBoundingClientRect().y;
         showMenuX = e.target.getBoundingClientRect().x;
         menuClickHeight = e.target.getBoundingClientRect().height;
-        console.log(showMenuX, showMenuY);
+        menuCliked = e.target.innerText;
         menuShown.show();
-        console.log($menuShown);
         menuShownLocal.local("menuBar");
     };
+
+    const optionsMenu = [
+        {
+            menu: "File",
+            options: [
+                { option: "New File", shortkey: "Ctrl+N", submenu: false },
+                {
+                    option: "New Window",
+                    shortkey: "Ctrl+Shift+N",
+                    submenu: false,
+                },
+                { hr: true },
+                { option: "Open File...", shortkey: "Ctrl+O", submenu: false },
+                {
+                    option: "Open Folder...",
+                    shortkey: "Ctrl+K Ctrl+O",
+                    submenu: false,
+                },
+                { option: "Open Workspace...", shortkey: "", submenu: false },
+                {
+                    option: "Open Recent",
+                    shortkey: "",
+                    submenu: true,
+                    submenus: [
+                        {
+                            submenuOption: "Reopen Closed Editor",
+                            shortkey: "Ctrl+Shift+T",
+                        },
+                    ],
+                },
+            ],
+        },
+        {
+            menu: "Edit",
+            options: [{ option: "Undo", shortkey: "Ctrl+Z", submenu: false }],
+        },
+    ];
 </script>
 
 <style>
@@ -95,14 +134,6 @@
         background-color: #d41325;
         fill: white;
     }
-    .teste {
-        display: none;
-        background-color: white;
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        z-index: 1;
-    }
 </style>
 
 <div class="wrap">
@@ -156,7 +187,9 @@
                     d="M7.116 8l-4.558 4.558.884.884L8 8.884l4.558 4.558.884-.884L8.884 8l4.558-4.558-.884-.884L8 7.116 3.442 2.558l-.884.884L7.116 8z" /></svg>
         </div>
     </div>
-    <div
-        class="teste"
-        style={`left: ${showMenuX}px; top: ${showMenuY + menuClickHeight}px; display: ${$menuShown === 0 ? 'none' : 'block'}`} />
+    <ContextMenu
+        {showMenuX}
+        {showMenuY}
+        {menuClickHeight}
+        optionsMenu={optionsMenu.find((e) => e.menu === menuCliked)} />
 </div>

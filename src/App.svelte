@@ -41,6 +41,9 @@
 	on:click={(e) => {
 		menuShownLocal.local(e.target.parentNode.id);
 		if ($menuShownLocal !== 'menuBar') menuShown.close();
+	}}
+	on:contextmenu={(e) => {
+		console.log(e.target);
 	}}>
 	<Menu />
 	<!-- <h1>Hello {name}!</h1>
